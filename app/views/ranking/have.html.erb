@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% i=0 %>
+    <% @ranking.each do |have| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if have.large_image.present? %>
+              <%= image_tag(have.large_image , alt: have.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: have.title) %>
+            <% end %>
+          </div>
+          <p class="label label-danger"><%= i+1 %>位</p>
+          <% i+=1 %>
+        </div>
+        <div class="detail">
+          <p class="title">
+             <%= have.title %>
+          </p>
+        </div>
+        <%= render 'items/action' , item: have if logged_in? %>
+      </div>
+    <% end %>
+  </div>
+</div>
