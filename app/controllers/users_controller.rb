@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def show
     # @items = @user.items.group(:item_id)
     @items = @user.items.group('items.id')
- end
+  end
 
   private
   def set_user
