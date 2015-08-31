@@ -36,7 +36,7 @@ gem 'amazon-ecs'
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do
-  gem 'puma'
+  #gem 'puma'
   gem 'rails_12factor'
   gem 'pg'
 end
